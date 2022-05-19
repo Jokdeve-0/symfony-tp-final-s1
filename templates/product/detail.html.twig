@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{title}} {{ parent ()}} {% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Référence</th>
+            <th scope="col">Libellé</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Date d'ajout</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ product.reference }}</th>
+                <td>{{ product.libelle }}</td>
+                <td>{{ product.prix | replace({".":","}) }}</td>
+                <td>{{ product.stock }}</td>
+                <td>
+                    {{product.dateCreate | format_datetime('full', 'full', locale='fr') | split(' ')[0]}}
+                    {{product.dateCreate | format_datetime('full', 'full', locale='fr') | split(' ')[1]}}
+                    {{product.dateCreate | format_datetime('full', 'full', locale='fr') | split(' ')[2]}}
+                    {{product.dateCreate | format_datetime('full', 'full', locale='fr') | split(' ')[3]}}
+                </td>
+                <td><a href="{{path('product_modify',{'id':product.id})}}">Modifier</a></td>
+                <td><a href="{{path('product_delete',{'id':product.id})}}">Supprimer</a></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

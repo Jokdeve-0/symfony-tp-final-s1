@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{title}} {{ parent ()}} {% endblock %}
+{% block body %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Référence</th>
+        <th scope="col">Libellé</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+        <tr>
+            <td> {{ product.reference }}</td>
+            <td><a href="{{path('product_detail',{'id':product.id}) }}"> {{ product.libelle }}</a></td>
+        </tr>
+    {% endfor%}
+    </tbody>
+</table>
+{% endblock %}
