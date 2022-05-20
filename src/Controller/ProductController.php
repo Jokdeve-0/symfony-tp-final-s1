@@ -87,7 +87,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/delete/{id}",name="delete",requirements={"id"="\d+"}))
      */
-    public function delete(int $id,Request $request, EntityManagerInterface $entityManager, ProductRepository $productRepo): Response
+    public function delete(int $id,ProductRepository $productRepo): Response
     {
         $product = $productRepo->findOneBy(['id'=>$id]);
         $productRepo->remove($product,true);

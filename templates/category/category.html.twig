@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{title}} {{ parent ()}} {% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">libellé</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if categories %}
+        {% for cat in categories %}
+            <tr>
+                <td> {{ cat.libelle }}</td>
+                <td><a href="{{path('category_modify',{'id':cat.id}) }}">modifier</a></td>
+                <td><a href="{{path('category_delete',{'id':cat.id}) }}">supprimer</a></td>
+
+            </tr>
+        {% endfor%}
+        {% endif %}
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+    {{ form_start(productForm)}}
+    <h2 class="text-center">Ajout de catégorie !</h2>
+    <button>Ajouter</button>
+    {{ form_end(productForm)}}
+{% endblock %}
