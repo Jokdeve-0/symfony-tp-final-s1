@@ -2,8 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Product;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,6 +21,10 @@ class ProductType extends AbstractType
             ->add('reference',TextType::class, ["label"=>"Référence"])
             ->add('prix',NumberType::class,["label"=>"Prix"])
             ->add('stock',NumberType::class,["label"=>"Stock"])
+            ->add('category',EntityType::class,[
+                'class'=>Category::class,
+                'choice_label'=>'libelle'
+            ])
         ;
     }
 

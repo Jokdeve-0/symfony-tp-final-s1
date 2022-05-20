@@ -4,13 +4,10 @@
     {{ form_start(productForm)}}
     <h2 class="text-center">Ajout de produit !</h2>
     {{form_row(productForm.reference)}}
-{#    <p>Entre 2 et 250 caractères et certains caratères ne sont pas autorisés</p>#}
     {{form_row(productForm.libelle)}}
-{#    <p>Minimun de  2 caractères</p>#}
     {{ form_row(productForm.prix) }}
     {{ form_row(productForm.stock) }}
-{#    <p>Entre 2 et 50 caractères et certains caratères ne sont pas autorisés</p>#}
-{#    {{ form_row(formWish.category,{"label":"Catégories"}) }}#}
+    {{ form_row(productForm.category,{"label":"Catégories"}) }}
     <button>Ajouter</button>
     {{ form_end(productForm)}}
 {% endblock %}

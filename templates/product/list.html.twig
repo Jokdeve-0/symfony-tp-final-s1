@@ -6,6 +6,7 @@
     <tr>
         <th scope="col">Référence</th>
         <th scope="col">Libellé</th>
+        <th scope="col">Catégorie</th>
     </tr>
     </thead>
     <tbody>
@@ -13,8 +14,10 @@
         <tr>
             <td> {{ product.reference }}</td>
             <td><a href="{{path('product_detail',{'id':product.id}) }}"> {{ product.libelle }}</a></td>
+            <td>{{product.category.libelle}}</td>
         </tr>
     {% endfor%}
     </tbody>
 </table>
+
 {% endblock %}

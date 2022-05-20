@@ -92,8 +92,6 @@ class ProductController extends AbstractController
         $product = $productRepo->findOneBy(['id'=>$id]);
         $productRepo->remove($product,true);
         $this->addFlash('success', 'Le produit à bien été supprimé !');
-        return $this->redirectToRoute('product_list', [
-            'title' => 'Liste de produit',
-        ]);
+        return $this->redirectToRoute('product_list');
     }
 }
