@@ -18,4 +18,31 @@
 >
 >• Ajouter au menu un lien vers la liste des catégories.
 
-![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg) 2022@Jokdeve-Looper
+>
+## Get started :
+> Clonez le projet
+## Configuration : 
+>Créez un fichier '` .env.local `' à la racine et ajoutez la configuration de la connexion à la BDD.
+
+## Installation : 
+
+### <span style="color:green">installer le projet et les dépendances : </span>
+> composer install
+
+### <span style="color:green">Creation de la base de données : </span>
+> php bin/console doctrine:database:create
+
+### <span style="color:green">Creation de migration :  </span>
+> php bin/console make:migration
+
+
+### <span style="color:green">Migrer : </span>
+> php bin/console doctrine:migrations:migrate
+
+## Conclusion :
+ <span style="color:green">Let's Go !</span>
+
+ ### Auteurs
+![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)
+> **Georges Ramos** _alias_ [@Jokdeve-Looper](https://github.com/Jokdeve-0)
+
